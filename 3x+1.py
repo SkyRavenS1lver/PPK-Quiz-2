@@ -1,6 +1,3 @@
-
-# N = int(input())
-
 def collatz(N):
     temp = [N]
     if N == 1:
@@ -8,10 +5,9 @@ def collatz(N):
     if N %2 == 1:
         temp += collatz(3*N+1)
     if N %2 == 0:
-        temporary = []
-        temporary.append(temp)
-        temporary[0]+=collatz(N//2)
-        return temporary
+        temp = [temp]
+        temp[0]+=collatz(N//2)
+        return temp
     return temp
 def hitung(arrays):
     hasilHitung = 0
@@ -25,12 +21,8 @@ def hitung(arrays):
         else:
             hasilHitung += arrays[i]
     return hasilHitung
-
 def hasil(N):
     hasil = collatz(N)
     print(hasil)
     print(hitung(hasil))
-
-# print(collatz(4))
-# print([5]+[6])
 hasil(int(input()))
