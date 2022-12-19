@@ -7,7 +7,6 @@ def collatz(N):
     if N %2 == 0:
         temp = [temp]
         temp[0]+=collatz(N//2)
-        return temp
     return temp
 def hitung(arrays):
     hasilHitung = 0
